@@ -82,13 +82,19 @@
 
     .vids {
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         justify-items: center;
 
     }
 
     .vid-wrap {
         margin: 1rem;
+    }
+
+    .vid-wrap h2 {
+        margin-bottom: 1.6rem;
+        font-size: 22px;
+
     }
 
 
