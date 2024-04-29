@@ -1,0 +1,102 @@
+.about-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    /* overflow: hidden; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/pics/profile-pic-grey.png');
+    background-size: 220%;
+    border-radius: 50%;
+    height: 420px;
+    width: 420px;
+    float: left;
+    shape-outside: circle();
+    padding: .25rem;
+    margin: 1.25rem;
+}
+
+.about-wrap h1 {
+    display: block;
+    flex-direction: row;
+    margin-top: 0;
+    font-size: 6rem;
+    line-height: 1.2;
+    font-family: 'glitch', sans-serif;
+}
+
+
+.about-me-text-wrapper {
+    position: relative;
+    width: 860px;
+    font-size: large;
+    text-align: left;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .about-wrap {
+        position: relative;
+        margin-top: 20%;
+        width: 100 vw;
+
+    }
+
+    .about-wrap section {
+        display: block;
+        position: relative;
+
+    }
+
+    .about-wrap h1 {
+        display: flex;
+        position: relative;
+        margin-top: 0;
+        font-size: 3.86rem;
+        line-height: 1.2;
+        text-align: left;
+
+
+    }
+
+    .circle {
+        height: 140px;
+        width: 140px;
+        margin: .2rem;
+        background-size: 210%;
+    }
+
+    .about-me-text-wrapper {
+        position: relative;
+        width: 320px;
+        font-size: 11px;
+        text-align: left;
+    }
+
+    .square-maker {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+
+
+    }
+
+
+
+
+
+
+}

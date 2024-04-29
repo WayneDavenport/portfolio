@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'glitch';
+    src: url('/fonts/glitch.ttf') format('truetype');
+
+}
+
+
+.home-body {
+
+    display: grid;
+    /* place-items: center; */
+    margin-top: 3.25%;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgb(22, 21, 21, 0);
+
+
+}
+
+.home-body h1 {
+
+    font-size: 8rem;
+    line-height: 1.2;
+    font-family: 'glitch', sans-serif;
+
+}
+
+.home-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+
+
+}
+
+.home-nav ul {
+
+    padding-inline-start: 0px;
+    z-index: 3;
+}
+
+.home-nav li {
+    text-decoration: none;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    transition: all .75s ease;
+}
+
+.home-nav li:hover {
+    animation: glowing-text-shadow-animation .5s ease-in-out, glow .5s ease-in-out;
+    text-shadow: 0 0 10px #2480f2, 0 0 20px #2480f2, 0 0 30px #2480f2, 0 0 40px #2480f2, 0 0 70px #2480f2;
+
+
+}
+
+.home-nav a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    .home-body {
+        margin-top: 23%;
+    }
+
+    .home-body h1 {
+        font-size: 3.95rem;
+    }
+
+    .home-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.65;
+        font-size: 1.45rem;
+
+
+    }
+
+
+}
+
+@keyframes glowing-text-shadow-animation {
+    from {
+        text-shadow: none;
+    }
+
+    to {
+        text-shadow: 0 0 10px #2480f2, 0 0 20px #2480f2, 0 0 30px #2480f2, 0 0 40px #2480f2, 0 0 70px #2480f2;
+
+    }
+
+}

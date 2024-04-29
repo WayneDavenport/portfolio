@@ -1,0 +1,158 @@
+.projects-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0;
+    font-size: 6.5rem;
+    line-height: 1.2;
+    font-family: 'glitch', sans-serif;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.vid-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vid-wrap h2 {
+    margin-bottom: .65rem;
+}
+
+.titles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 16px;
+    margin-top: 1rem;
+    text-align: center;
+    margin-bottom: .05rem;
+}
+
+
+.vids {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+
+}
+
+.vid {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 160px;
+    margin-top: .15rem;
+}
+
+/* .mobile-description {
+    display: none;
+} */
+
+.description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 286px;
+    padding: .25rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 8px 0 whitesmoke;
+    overflow-y: auto;
+    border-radius: 16px;
+}
+
+
+
+
+
+@media only screen and (max-width: 1330px) {
+
+    .titles {
+        display: none;
+    }
+
+    .vids {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+
+    }
+
+    .vid-wrap {
+        margin: 1rem;
+    }
+
+
+    .mobile-description {
+        position: relative;
+        display: flex;
+        width: 300px;
+    }
+
+
+
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .projects-title {
+        margin-top: 2rem;
+        font-size: 3.8rem;
+    }
+
+
+    .projects {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        justify-content: center;
+        height: 480px;
+        overflow-y: auto;
+    }
+
+    .vid {
+        display: flex;
+        flex-direction: column;
+        width: 310px;
+        height: 230px;
+        margin-top: .15rem;
+    }
+
+
+
+
+    .titles {
+        display: none;
+    }
+
+    .description {
+
+        width: 300px;
+    }
+
+
+
+
+
+}

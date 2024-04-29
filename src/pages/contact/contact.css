@@ -1,0 +1,121 @@
+.contact-wrap {
+    text-align: center;
+    /* Center the content horizontally */
+}
+
+.contact-wrap h1 {
+    display: block;
+    flex-direction: row;
+    margin-top: 0;
+    font-size: 6rem;
+    line-height: 1.2;
+    font-family: 'glitch', sans-serif;
+}
+
+.contact-methods {
+    font-size: 22px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    /* Remove default bullet points */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.contact-method {
+    display: flex;
+    /* Arrange elements horizontally */
+    align-items: center;
+    justify-content: center;
+    /* Vertically align content within each item */
+    margin-bottom: 10px;
+    /* Add spacing between items */
+}
+
+.contact-method img {
+    margin-right: 10px;
+    /* Space between icon and text */
+}
+
+.correct-link {
+    /* Adjust styling for the LinkedIn link if needed */
+    color: #0077b5;
+    /* Optional: Set a different color for LinkedIn */
+    text-decoration: none;
+    /* Remove default underline */
+}
+
+.correct-link:hover {
+    text-decoration: underline;
+    /* Add underline on hover */
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    .contact-wrap {
+        justify-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.75;
+        vertical-align: middle;
+        margin-top: 33%;
+    }
+
+    .contact-methods {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+
+
+    }
+
+    .contact-wrap h1 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        font-size: 3.85rem;
+        line-height: 1.2;
+        font-family: 'glitch', sans-serif;
+    }
+
+    .contact-method {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: left;
+    }
+
+    .contact-methods img {
+        display: flex;
+        height: 30px;
+        width: 30px;
+        margin-right: .75rem;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    .titlebox {
+        width: 100vw;
+        display: flex;
+        justify-content: left;
+        text-align: left;
+    }
+
+
+
+
+
+}

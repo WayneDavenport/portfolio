@@ -1,0 +1,164 @@
+.nav-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    /* margin-left: 12%; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+    margin-bottom: 4.5rem;
+
+}
+
+.nav-div a {
+    position: relative;
+    z-index: 2;
+}
+
+li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul.nav-list {
+    list-style: none;
+    font-size: 2rem;
+}
+
+.yo-nav {
+    transform: scale(.1);
+    opacity: 0;
+    animation: glowing-text-shadow-animation-out .25s ease-out;
+
+}
+
+
+
+.yo-nav:hover {
+    animation: glowing-text-shadow-animation .25s ease-in-out;
+    text-shadow: 0 0 10px #2480f2, 0 0 20px #2480f2, 0 0 30px #2480f2, 0 0 40px #2480f2, 0 0 70px #2480f2;
+
+
+
+}
+
+.hamburger-button {
+    display: none;
+    /* Initially hidden on larger screens */
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.bar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: whitesmoke;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.bar-top {
+    top: 0;
+}
+
+.bar-middle {
+    top: 50%;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.bar-bottom {
+    bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .nav-div {
+        overflow-y: hidden;
+
+    }
+
+    /* Hide nav-list by default on mobile */
+    .nav-list {
+        display: none;
+    }
+
+    /* Show hamburger button on mobile */
+    .hamburger-button {
+        display: block;
+
+    }
+
+
+
+
+
+    .nav-list.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        height: auto;
+        overflow: auto;
+        transition: transform 0.3s ease-in-out;
+        font-size: 1.2rem;
+
+    }
+
+    /* Reset yo-nav styles for mobile */
+    .yo-nav {
+        transform: scale(1);
+        opacity: 1;
+
+    }
+
+    /* Animations for hamburger button on mobile */
+    .hamburger-button.open .bar-top {
+        transform: rotateZ(135deg);
+        top: 50%;
+
+    }
+
+    .hamburger-button.open .bar-middle {
+        opacity: 0;
+        display: none;
+        top: 0;
+    }
+
+    .hamburger-button.open .bar-bottom {
+        transform: rotateZ(-135deg);
+        bottom: 50%;
+
+    }
+}
+
+@keyframes glowing-text-shadow-animation {
+    from {
+        text-shadow: none;
+    }
+
+    to {
+        text-shadow: 0 0 10px #2480f2, 0 0 20px #2480f2, 0 0 30px #2480f2, 0 0 40px #2480f2, 0 0 70px #2480f2;
+
+    }
+
+}
+
+@keyframes glowing-text-shadow-animation-out {
+    from {
+        text-shadow: 0 0 10px #2480f2, 0 0 20px #2480f2, 0 0 30px #2480f2, 0 0 40px #2480f2, 0 0 70px #2480f2;
+    }
+
+    to {
+        text-shadow: none;
+
+    }
+}
