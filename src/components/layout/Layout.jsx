@@ -34,7 +34,7 @@ function Layout({ children }) {
 
     return (
         <div className="nav-div">
-            <nav>
+            <nav className={`nav-burger ${isOpen ? 'open' : ''}`} >
                 <HamburgerButton isOpen={isOpen} toggleMenu={toggleMenu} />
                 <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
                     <motion.li

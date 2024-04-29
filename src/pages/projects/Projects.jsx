@@ -93,7 +93,7 @@ export function Projects() {
                     <div className='vid-wrap'>
                         <h2 className='title'>Healing Warriors Inc.</h2>
                         <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} data-src="/vids/healing-vid.mp4" >
+                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/hw-shot.png" >
                                 <source src="/vids/healing-vid.mp4" type="video/mp4" />
                             </video>
                         </div>
@@ -103,7 +103,7 @@ export function Projects() {
                     <div className='vid-wrap'>
                         <h2 className='title'>To-Do List</h2>
                         <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }}>
+                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/dash-shot.png">
                                 <source src="/vids/dashboard-vid.mp4" type="video/mp4" />
                             </video>
                         </div>
@@ -113,7 +113,7 @@ export function Projects() {
                     <div className='vid-wrap'>
                         <h2 className='title'>Lottory Generator</h2>
                         <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }}>
+                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/lotto-shot.png">
                                 <source src="/vids/lotto-vid.mp4" type="video/mp4" />
                             </video>
                         </div>
@@ -123,7 +123,7 @@ export function Projects() {
                     <div className='vid-wrap'>
                         <h2 className='title'>Personal Blog</h2>
                         <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }}>
+                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/chimp-shot.png">
                                 <source src="/vids/blog-vid.mp4" type="video/mp4" />
                             </video>
                         </div>
@@ -134,7 +134,7 @@ export function Projects() {
                         <h2 className='title'>Social Media Backend</h2>
                         <div className="vid">
                             <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/back-shot.png"  >
-                                <source data-src="/vids/blog-vid.mp4" type="video/mp4" />
+                                <source src="/vids/buddies-vid.mp4" type="video/mp4" />
                             </video>
                         </div>
                         <p className='description'>{videoDescription.buddies}</p>
