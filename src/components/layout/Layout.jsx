@@ -42,6 +42,9 @@ function Layout({ children }) {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        onClick={() => {
+                            toggleMenu(false);
+                        }}
                     >
                         <Link to='/'>Home</Link>
                     </motion.li>
@@ -50,6 +53,9 @@ function Layout({ children }) {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        onClick={() => {
+                            toggleMenu(false);
+                        }}
                     >
                         <Link to='/about-me'>About Me</Link>
                     </motion.li>
@@ -58,6 +64,9 @@ function Layout({ children }) {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        onClick={() => {
+                            toggleMenu(false);
+                        }}
                     >
                         <Link to='/skills'>Skills</Link>
                     </motion.li>
@@ -66,6 +75,9 @@ function Layout({ children }) {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        onClick={() => {
+                            toggleMenu(false);
+                        }}
                     >
                         <Link to='/projects'>Projects</Link>
                     </motion.li>
@@ -74,6 +86,9 @@ function Layout({ children }) {
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        onClick={() => {
+                            toggleMenu(false);
+                        }}
                     >
                         <Link to='/contact'>Contact</Link>
                     </motion.li>
