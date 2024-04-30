@@ -94,7 +94,6 @@ function Layout({ children }) {
                     </motion.li>
                 </ul>
             </nav>
-
             <main>
                 <Outlet />
             </main>

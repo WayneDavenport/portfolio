@@ -87,7 +87,7 @@ export function Skills() {
                             <li>Git/Github</li>
                             <li>Krita</li>
                             <li>Ai & LLM Prompting &#128540;</li>
-                            <li>Cpanel</li>
+                            <li>C-Panel</li>
                         </ul>
                     </a.section>
                 </div>

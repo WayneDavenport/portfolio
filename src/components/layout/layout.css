@@ -11,6 +11,7 @@
 
 }
 
+
 .nav-div a {
     position: relative;
     z-index: 2;
@@ -81,10 +82,7 @@ ul.nav-list {
 
 @media only screen and (max-width: 768px) {
 
-    .nav-div {
-        overflow-y: hidden;
-
-    }
+    .nav-div {}
 
     /* Hide nav-list by default on mobile */
     .nav-list {
@@ -125,7 +123,6 @@ ul.nav-list {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         padding: 0;
         height: auto;
         overflow: auto;

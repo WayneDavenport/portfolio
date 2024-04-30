@@ -40,7 +40,7 @@
 
 .about-me-text-wrapper {
     position: relative;
-    width: 860px;
+    width: 990px;
     font-size: large;
     text-align: left;
 }
@@ -55,7 +55,7 @@
     }
 
     .about-wrap section {
-        display: block;
+        margin-left: 5%;
         position: relative;
 
     }
@@ -80,8 +80,8 @@
 
     .about-me-text-wrapper {
         position: relative;
-        width: 320px;
-        font-size: 11px;
+        width: 95%;
+        font-size: 12px;
         text-align: left;
     }
 
@@ -96,7 +96,20 @@
 
 
 
+}
 
+@media only screen and (max-height: 820px) {
 
+    .about-wrap {
+        height: 75vh;
+        overflow-y: auto;
+        /* margin-top: 0%; */
+
+    }
+
+    .about-wrap div h1 {
+        z-index: 4;
+        margin-top: 90%;
+    }
 
 }
