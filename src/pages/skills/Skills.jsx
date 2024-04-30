@@ -84,7 +84,6 @@ export function Skills() {
                         <h2 className='skill-type'>Side Dishes</h2>
                         <ul>
                             <li>Figma</li>
-                            <li>GSAP</li>
                             <li>Git/Github</li>
                             <li>Krita</li>
                             <li>Ai & LLM Prompting &#128540;</li>
