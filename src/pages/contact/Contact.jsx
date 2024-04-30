@@ -18,7 +18,7 @@ export function Contact() {
                     <img src={icons.email} alt="Email Icon" /> wayne86davenport@gmail.com
                 </li>
                 <li className="contact-method">
-                    <img src={icons.phone} alt="Phone Icon" /> (979-)235-7001
+                    <img src={icons.phone} alt="Phone Icon" /> (979)235-7001
                 </li>
 
                 <li className="contact-method">
