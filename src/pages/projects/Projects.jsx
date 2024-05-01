@@ -111,7 +111,7 @@ export function Projects() {
                     </div>
 
                     <div className='vid-wrap'>
-                        <h2 className='title'>Lottory Generator</h2>
+                        <h2 className='title'>Lottery Generator</h2>
                         <div className="vid">
                             <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/lotto-shot.png">
                                 <source src="/vids/lotto-vid.mp4" type="video/mp4" />
