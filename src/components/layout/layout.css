@@ -82,6 +82,7 @@ ul.nav-list {
 
     .nav-div {
         overflow-y: hidden;
+        overscroll-behavior: contain;
 
     }
 
