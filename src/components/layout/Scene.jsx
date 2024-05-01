@@ -1,10 +1,11 @@
-import { OrbitControls, SpotLight } from "@react-three/drei";
+import { OrbitControls, SpotLight, } from "@react-three/drei";
 import Particles from "../embers/Embers";
 import { Ground } from "../ground/Ground";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useFrame, useThree } from '@react-three/fiber';
 import { isMobile } from 'react-device-detect';
+
 
 
 import useMediaQuery from "./useMediaQuery"; //custom hook
@@ -100,7 +101,7 @@ const Scene = () => {
             />
             <directionalLight
                 color={[5.14, 5.05, 5.75]}
-                position={[1, 2.75, -1]}
+                position={[1, 4.75, -1]}
             />
 
             <ambientLight intensity={0.75} />
