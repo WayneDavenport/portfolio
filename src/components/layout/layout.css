@@ -45,7 +45,6 @@ ul.nav-list {
 
 .hamburger-button {
     display: none;
-    /* Initially hidden on larger screens */
     width: 30px;
     height: 30px;
     padding: 5px;
@@ -111,9 +110,9 @@ ul.nav-list {
         backdrop-filter: blur(3px);
         background-color: rgba(51, 51, 51, 0.5);
         display: flex;
+        transition: all 1s ease;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        /* Reveals menu content */
-        animation: closeMenu 0.5s ease-in-out forwards;
+        animation: closeMenu 0.65s ease-in-out forwards;
         animation-fill-mode: forwards;
     }
 
@@ -188,11 +187,11 @@ ul.nav-list {
 @keyframes closeMenu {
     from {
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        /* Open state */
+
     }
 
     to {
         clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
-        /* Hidden state */
+
     }
 }

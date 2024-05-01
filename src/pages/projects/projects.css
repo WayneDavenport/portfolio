@@ -52,6 +52,10 @@
     margin-top: .65rem;
 }
 
+.vid video {
+    border-radius: 16px;
+}
+
 
 .description {
     position: relative;
