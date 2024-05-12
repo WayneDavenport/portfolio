@@ -41,7 +41,7 @@ function Layout({ children }) {
                         className="yo-nav"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        transition={{ type: "spring", stiffness: 350, damping: 17 }}
                         onClick={() => {
                             toggleMenu(false);
                         }}
@@ -52,7 +52,7 @@ function Layout({ children }) {
                         className="yo-nav"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        transition={{ type: "spring", stiffness: 350, damping: 17 }}
                         onClick={() => {
                             toggleMenu(false);
                         }}
@@ -63,7 +63,7 @@ function Layout({ children }) {
                         className="yo-nav"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        transition={{ type: "spring", stiffness: 350, damping: 17 }}
                         onClick={() => {
                             toggleMenu(false);
                         }}
@@ -74,7 +74,7 @@ function Layout({ children }) {
                         className="yo-nav"
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        transition={{ type: "spring", stiffness: 350, damping: 17 }}
                         onClick={() => {
                             toggleMenu(false);
                         }}

@@ -11,6 +11,7 @@ const icons = {
 
 export function Contact() {
     return (
+
         <div className="contact-wrap">
             <h1>Contact Info</h1>
             <ul className="contact-methods">
@@ -32,5 +33,6 @@ export function Contact() {
                 </li>
             </ul>
         </div>
+
     )
 } 

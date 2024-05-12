@@ -1,6 +1,13 @@
 .contact-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    margin-top: 8%;
     text-align: center;
     /* Center the content horizontally */
+
 }
 
 .contact-wrap h1 {
