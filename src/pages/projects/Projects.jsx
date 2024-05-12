@@ -16,17 +16,28 @@ export function Projects() {
     const videoRef = useRef(null);
     /* useLazyLoad(videoRef); */
 
+    /*     useEffect(() => {
+            const video = videoRef.current;
+            
+            if (video) {
+                video.addEventListener('loadeddata', () => {
+                    const parent = video.parentElement;
+                    const parentHeight = parent.offsetHeight;
+                    const parentWidth = parent.offsetWidth;
+                    video.style.height = `${parentHeight}px`;
+                    const videoWidth = video.offsetWidth;
+                    const leftAdjust = (parentWidth - videoWidth) / 2;
+                    video.style.left = `${leftAdjust}px`;
+                });
+            }
+        }, []); */
+
     useEffect(() => {
         const video = videoRef.current;
         if (video) {
-            video.addEventListener('loadeddata', () => {
-                const parent = video.parentElement;
-                const parentHeight = parent.offsetHeight;
-                const parentWidth = parent.offsetWidth;
-                video.style.height = `${parentHeight}px`;
-                const videoWidth = video.offsetWidth;
-                const leftAdjust = (parentWidth - videoWidth) / 2;
-                video.style.left = `${leftAdjust}px`;
+            video.addEventListener('canplaythrough', () => {
+                video.style.display = 'block'; // Make sure the video is visible
+                video.play(); // Start playing the video
             });
         }
     }, []);

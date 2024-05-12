@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { PlaneGeometry } from "three";
 import { MeshReflectorMaterial } from "@react-three/drei";
-import { LinearEncoding, MeshStandardMaterial, RepeatWrapping, TextureLoader, Vector3 } from "three";
+import { LinearSRGBColorSpace, RepeatWrapping, TextureLoader, Vector3 } from "three";
 
 export function Ground() {
     const meshRef = useRef()
@@ -22,7 +22,7 @@ export function Ground() {
             t.offset.set(0, 0);
         });
 
-        normal.encoding = LinearEncoding;
+        normal.colorSpace = LinearSRGBColorSpace;
     }, [normal, roughness]);
 
     /*     useFrame((state, delta) => {
