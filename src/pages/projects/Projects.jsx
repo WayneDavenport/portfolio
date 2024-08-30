@@ -8,7 +8,7 @@ const videoDescription = {
     dashBoard: "A full-stack, to-do list that I made using vanilla front-end code, Express, EJS, MongoDB and Node.js. It can create, read, and delete list items in the database. I also utilized a weather api, and coded a timer as well as a clock for the app. I actually use this quite a bit for myself and plan to keep adding and improving features, simply for personal use.",
     lotto: "A simple lottery number generator using some pseudo roulette strategy. It takes the last 3 months worth of winning numbers, and randomly selects 3 numbers from the top 13 most frequent numbers, and two random numbers from the remaining numbers. I got the idea from a website my mom used, and it turned out to be a great exercise for array manipulation.",
     blog: "A personal blog I’m working on. It contains multiple routed pages for different styles of content, which will have dynamically rendered thumbnails on the home feed. I currently have this feature working using redux. For the 3d assets I used awesome bump to generate texture files from images and mapped them to 3d objects in Three.JS.",
-    buddies: 'I was involved in a group portfolio project that split up for various reasons. I built the back-end for it using Node.js, Express, MongoDB and Firebase for authentication. It was a social media web app that would connect immigrants with buddies to get adjusted in a new place. Features I had working included profile creation, sign in/out, user search with filters, and a friend request system. '
+    buddies: 'An app for mindful media consumption and productivity. Create a queue of shows, movies, books, and games. Create locks, and see the time cost of media activities. Being built in Next.js with Mongo.db for the database. The alpha version of this site is currently up at: https://mediaq-nine.vercel.app '
 }
 
 export function Projects() {
@@ -142,10 +142,10 @@ export function Projects() {
                     </div>
 
                     <div className='vid-wrap'>
-                        <h2 className='title'>Social Media Backend</h2>
+                        <h2 className='title'>Media Consumption App</h2>
                         <div className="vid">
                             <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/back-shot.png"  >
-                                <source src="/vids/buddies-vid.mp4" type="video/mp4" />
+                                <source src="/vids/mediaq-vid.mp4" type="video/mp4" />
                             </video>
                         </div>
                         <p className='description'>{videoDescription.buddies}</p>
