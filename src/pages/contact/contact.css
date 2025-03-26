@@ -60,6 +60,39 @@
     /* Add underline on hover */
 }
 
+.mediaq-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+.mediaq-section h2 {
+    font-size: 4rem;
+    font-family: 'glitch', sans-serif;
+    margin-bottom: 2rem;
+}
+
+.qr-code-container {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.mediaq-link {
+    font-size: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.mediaq-link:hover {
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 768px) {
 
 
@@ -121,8 +154,21 @@
         text-align: left;
     }
 
+    .mediaq-section {
+        margin-top: 2rem;
+        padding: 1rem;
+    }
 
+    .mediaq-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
 
+    .qr-code-container {
+        transform: scale(0.8);
+    }
 
-
+    .mediaq-link {
+        font-size: 1.2rem;
+    }
 }

@@ -5,6 +5,7 @@ import { AboutMe } from "./pages/about-me/AboutMe.jsx";
 import { Skills } from "./pages/skills/Skills.jsx";
 import { Projects } from "./pages/projects/Projects.jsx";
 import { Contact } from "./pages/contact/Contact.jsx";
+import { MediaQ } from "./pages/mediaq/MediaQ.jsx";
 import Layout from "./components/layout/Layout.jsx";
 import "./App.css";
 import PositionedScene from "./components/layout/PositionedScene.jsx";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/mediaq" element={<MediaQ />} />
         </Route>
       </Routes>
       <PositionedScene />

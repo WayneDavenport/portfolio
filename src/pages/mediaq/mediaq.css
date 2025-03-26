@@ -1,0 +1,89 @@
+.mediaq-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.8%;
+    text-align: center;
+}
+
+.mediaq-page h1 {
+    font-size: 6rem;
+    line-height: 1.2;
+    font-family: 'glitch', sans-serif;
+    margin-bottom: 1.6rem;
+}
+
+.mediaq-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    gap: 1.2rem;
+}
+
+.mediaq-hero {
+    padding: 0 2rem;
+}
+
+.mediaq-hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0077b5;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 1.6rem;
+}
+
+.qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qr-code-container {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mediaq-link {
+    font-size: 1.5rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.mediaq-link:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+    .mediaq-page {
+        margin-top: 33%;
+    }
+
+    .mediaq-page h1 {
+        font-size: 3.85rem;
+    }
+
+    .mediaq-hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .qr-code-container {
+        transform: scale(0.8);
+    }
+
+    .mediaq-link {
+        font-size: 1.2rem;
+    }
+}

@@ -1,6 +1,6 @@
 .nav-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     position: relative;
     /* margin-left: 12%; */
     align-items: center;

@@ -17,14 +17,16 @@ const pathToIndexMap = {
     "/skills": 2,
     "/projects": 3,
     "/contact": 4,
+    "/mediaq": 5,
 };
 
 const cameraPositions = [
-    { x: 3.5, y: 0, z: 0 },
-    { x: 3, y: 0, z: 3 },
-    { x: 0, y: 0.6, z: 3 },
-    { x: -3, y: -0.5, z: 3 },
-    { x: 2, y: 0.85, z: 1 },
+    { x: 3.5, y: 0, z: 0 },     // Home
+    { x: 3, y: 0, z: 3 },       // About Me
+    { x: 0, y: 0.6, z: 3 },     // Skills
+    { x: -3, y: -0.5, z: 3 },   // Projects
+    { x: 2, y: 0.85, z: 1 },    // Contact
+    { x: -2, y: 1.2, z: -2 },   // MediaQ - positioned to create visual interest
 ];
 
 const Scene = () => {

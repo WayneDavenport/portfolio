@@ -92,6 +92,18 @@ function Layout({ children }) {
                     >
                         <Link to='/contact'>Contact</Link>
                     </motion.li>
+                    {/* MediaQ */}
+                    <motion.li
+                        className="yo-nav"
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                        onClick={() => {
+                            toggleMenu(false);
+                        }}
+                    >
+                        <Link to='/mediaq'>MediaQ</Link>
+                    </motion.li>
                 </ul>
             </nav>
 
