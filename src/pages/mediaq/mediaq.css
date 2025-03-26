@@ -64,26 +64,70 @@
 
 @media only screen and (max-width: 768px) {
     .mediaq-page {
-        margin-top: 33%;
+        margin-top: 15%;
+        height: 100vh;
+        justify-content: flex-start;
     }
 
     .mediaq-page h1 {
-        font-size: 3.85rem;
+        font-size: 3.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .mediaq-content {
+        gap: 0.8rem;
+    }
+
+    .mediaq-hero {
+        padding: 0 1rem;
     }
 
     .mediaq-hero h2 {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
     }
 
     .hero-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+    }
+
+    .qr-section {
+        gap: 0.5rem;
     }
 
     .qr-code-container {
-        transform: scale(0.8);
+        padding: 0.5rem;
+        transform: scale(0.7);
+        margin: -2rem;
     }
 
     .mediaq-link {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Additional breakpoint for very small devices */
+@media only screen and (max-width: 380px) {
+    .mediaq-page {
+        margin-top: 10%;
+    }
+
+    .mediaq-page h1 {
+        font-size: 2.8rem;
+    }
+
+    .mediaq-hero h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-text {
+        font-size: 0.85rem;
+    }
+
+    .qr-code-container {
+        transform: scale(0.6);
+        margin: -3rem;
     }
 }
