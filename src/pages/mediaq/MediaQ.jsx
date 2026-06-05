@@ -7,6 +7,7 @@ export function MediaQ() {
         <div className="mediaq-page">
             <h1>MediaQ</h1>
             <div className="mediaq-content">
+
                 <div className="mediaq-hero">
                     <h2>Revolutionizing Media Management</h2>
                     <p className="hero-text">

@@ -14,8 +14,11 @@
     "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.99.0",
     "@react-three/fiber": "^8.15.16",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.1.7",
     "gsap": "^3.12.5",
+    "lucide-react": "^1.17.0",
     "prettier": "^3.2.5",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
@@ -24,6 +27,7 @@
     "react-qr-code": "^2.0.15",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.22.1",
+    "tailwind-merge": "^3.6.0",
     "three": "^0.161.0"
   },
   "devDependencies": {

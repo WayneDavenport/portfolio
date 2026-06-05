@@ -1,158 +1,108 @@
 import './projects.css';
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import useLazyLoad from './useLazyLoad';
+import React, { useState, useEffect, useRef } from 'react';
+import { Badge } from '../../components/ui/Badge';
 
-const videoDescription = {
-    healingWarriors: "A website I built for a non-profit. I used vanilla JavaScript, HTML, and CSS. I didn't use any frameworks because I didn't know one at the time. We utilized third party plug-in's for email lists, a calendar, and donations. I used a combination of free assets, Ai art, parallax scrolling, a warm color pallet, and subtle CSS and GSAP animations, to deliver the user experience.",
-    dashBoard: "A full-stack, to-do list that I made using vanilla front-end code, Express, EJS, MongoDB and Node.js. It can create, read, and delete list items in the database. I also utilized a weather api, and coded a timer as well as a clock for the app. I actually use this quite a bit for myself and plan to keep adding and improving features, simply for personal use.",
-    lotto: "A simple lottery number generator using some pseudo roulette strategy. It takes the last 3 months worth of winning numbers, and randomly selects 3 numbers from the top 13 most frequent numbers, and two random numbers from the remaining numbers. I got the idea from a website my mom used, and it turned out to be a great exercise for array manipulation.",
-    blog: "A personal blog I’m working on. It contains multiple routed pages for different styles of content, which will have dynamically rendered thumbnails on the home feed. I currently have this feature working using redux. For the 3d assets I used awesome bump to generate texture files from images and mapped them to 3d objects in Three.JS.",
-    buddies: 'An app for mindful media consumption and productivity. Create a queue of shows, movies, books, and games. Create locks, and see the time cost of media activities. Being built in Next.js with Mongo.db for the database. The alpha version of this site is currently up at: https://mediaq-nine.vercel.app '
-}
+const projectsData = [
+    {
+        id: 'healing-warriors',
+        title: 'Healing Warriors Inc.',
+        description: "A website I built for a non-profit organization. I used vanilla JavaScript, HTML, and CSS, utilizing third-party plugins for email lists, calendars, and donations. I created an immersive experience using free assets, AI art, parallax scrolling, a warm color palette, and subtle CSS and GSAP animations to deliver an engaging user experience that effectively communicates the organization's mission.",
+        video: '/vids/healing-vid.mp4',
+        poster: '/pics/hw-shot.png',
+        tech: ['HTML', 'CSS', 'JavaScript', 'GSAP', 'Parallax'],
+        link: 'https://www.healingwarriorsinc.com'
+    },
+    {
+        id: 'picto-nomo',
+        title: 'Picto-Nomo',
+        description: "A local-first photo transfer app with on-device AI categorization. Transfer photos from your phone to your PC over local WiFi using WebRTC - all without any cloud services! Features dual-mode AI (Google ML Kit for image labeling with heuristic fallback) with 11 smart categories, custom category creation, chunked P2P transfer with real-time progress tracking, and a polished UX with preview, filters, and batch operations. Built with Expo (React Native) for mobile and React + Vite for the web receiver.",
+        video: '/vids/picto-dimo.mp4',
+        poster: '/pics/back-shot.png',
+        tech: ['React Native', 'Expo', 'Google ML Kit', 'WebRTC', 'React', 'Vite', 'Socket.io'],
+        link: null
+    },
+    {
+        id: 'mediaq',
+        title: 'MediaQ',
+        description: "A sophisticated social platform that transforms personal media consumption into a gamified and structured journey. Users can search for movies, TV shows, books, and video games, adding them to a personal queue. The standout feature is a unique 'locking' system that enables users to create dependencies between media items, turning a simple backlog into a personalized progression system. Enhanced by social features like friend recommendations, detailed progress charts, and integrations with services like JustWatch for streaming availability.",
+        video: '/vids/mediaq-vid.mkv',
+        poster: '/pics/back-shot.png',
+        tech: ['Next.js', 'React', 'Supabase', 'NextAuth', 'Framer Motion', 'Radix UI', 'Zustand'],
+        link: 'https://www.mediaq.io'
+    }
+];
 
 export function Projects() {
-
+    const [currentProject, setCurrentProject] = useState(0);
     const videoRef = useRef(null);
-    /* useLazyLoad(videoRef); */
-
-    /*     useEffect(() => {
-            const video = videoRef.current;
-            
-            if (video) {
-                video.addEventListener('loadeddata', () => {
-                    const parent = video.parentElement;
-                    const parentHeight = parent.offsetHeight;
-                    const parentWidth = parent.offsetWidth;
-                    video.style.height = `${parentHeight}px`;
-                    const videoWidth = video.offsetWidth;
-                    const leftAdjust = (parentWidth - videoWidth) / 2;
-                    video.style.left = `${leftAdjust}px`;
-                });
-            }
-        }, []); */
 
     useEffect(() => {
         const video = videoRef.current;
         if (video) {
-            video.addEventListener('canplaythrough', () => {
-                video.style.display = 'block'; // Make sure the video is visible
-                video.play(); // Start playing the video
-            });
+            video.load();
+            video.play().catch(err => console.log('Video autoplay prevented:', err));
         }
-    }, []);
+    }, [currentProject]);
 
-    useEffect(() => {
-        const tl = gsap.timeline({
-            defaults: {
-                duration: .60,
-                ease: 'power1.out',
-                stagger: 0
-            }
-        });
-
-        tl.fromTo('.vid', {
-            x: '-900%',
-            opacity: 0.5
-        }, {
-            x: '50%',
-            opacity: 1,
-            stagger: 0
-        })
-            .to('.vid', {
-                x: '0%',
-                opacity: 1,
-
-
-            });
-    }, []);
-
-
-    useEffect(() => {
-
-        const tlThree = gsap.timeline({
-            defaults: {
-                duration: .60,
-                ease: 'power1.out',
-                stagger: 0
-            }
-        });
-
-
-
-        tlThree.fromTo('.description', {
-            x: '900%',
-            opacity: 0.5
-        }, {
-            x: '-50%',
-            opacity: 1,
-            stagger: 0
-        })
-            .to('.description', {
-                x: '0%',
-                opacity: 1
-            });
-    }, []);
+    const project = projectsData[currentProject];
 
     return (
-        <>
-            <h1 className='projects-title' >Projects</h1>
-            <div className="projects">
+        <div className="projects-container">
+            {/* Project Navigation */}
+            <nav className="project-nav">
+                {projectsData.map((proj, index) => (
+                    <button
+                        key={proj.id}
+                        className={`project-nav-btn ${currentProject === index ? 'active' : ''}`}
+                        onClick={() => setCurrentProject(index)}
+                    >
+                        {proj.title}
+                    </button>
+                ))}
+            </nav>
 
-                <section className="vids">
-
-                    <div className='vid-wrap'>
-                        <h2 className='title'>Healing Warriors Inc.</h2>
-                        <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/hw-shot.png" >
-                                <source src="/vids/healing-vid.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <p className='description'>{videoDescription.healingWarriors}</p>
+            {/* Project Content */}
+            <div className="project-content">
+                {/* Video Section */}
+                <div className="project-video-section">
+                    <div className="project-video-container">
+                        <video
+                            ref={videoRef}
+                            loop
+                            autoPlay
+                            muted
+                            playsInline
+                            poster={project.poster}
+                            className="project-video"
+                        >
+                            <source src={project.video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
-
-                    <div className='vid-wrap'>
-                        <h2 className='title'>To-Do List</h2>
-                        <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/dash-shot.png">
-                                <source src="/vids/dashboard-vid.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <p className='description'>{videoDescription.dashBoard}</p>
+                    {/* Tech Stack Badges */}
+                    <div className="tech-badges">
+                        {project.tech.map((tech, index) => (
+                            <Badge
+                                key={tech}
+                                variant={index % 4 === 0 ? 'default' : index % 4 === 1 ? 'secondary' : index % 4 === 2 ? 'success' : 'warning'}
+                            >
+                                {tech}
+                            </Badge>
+                        ))}
                     </div>
+                </div>
 
-                    <div className='vid-wrap'>
-                        <h2 className='title'>Lottery Generator</h2>
-                        <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/lotto-shot.png">
-                                <source src="/vids/lotto-vid.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <p className='description'>{videoDescription.lotto}</p>
-                    </div>
-
-                    <div className='vid-wrap'>
-                        <h2 className='title'>Personal Blog</h2>
-                        <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/chimp-shot.png">
-                                <source src="/vids/blog-vid.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <p className='description'>{videoDescription.blog}</p>
-                    </div>
-
-                    <div className='vid-wrap'>
-                        <h2 className='title'>Media Consumption App</h2>
-                        <div className="vid">
-                            <video ref={videoRef} loop autoPlay muted style={{ position: 'absolute', width: '100%', height: '100%' }} poster="/pics/back-shot.png"  >
-                                <source src="/vids/mediaq-vid.mp4" type="video/mp4" />
-                            </video>
-                        </div>
-                        <p className='description'>{videoDescription.buddies}</p>
-                    </div>
-                </section >
-            </div >
-
-        </>
-    )
-} 
+                {/* Description Section */}
+                <div className="project-description-section">
+                    <h1 className="project-title">{project.title}</h1>
+                    <p className="project-description">{project.description}</p>
+                    {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                            Visit Site →
+                        </a>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+}

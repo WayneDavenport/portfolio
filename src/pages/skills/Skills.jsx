@@ -52,10 +52,12 @@ export function Skills() {
                             <li>CSS/SASS</li>
                             <li>JavaScript</li>
                             <li>React</li>
+                            <li>Next.js</li>
                             <li>Redux</li>
                             <li>Three.js/React-three-fiber</li>
                             <li>React-Spring</li>
                             <li>GSAP</li>
+                            <li>Framer Motion</li>
                         </ul>
                     </a.section>
 
@@ -65,13 +67,17 @@ export function Skills() {
                             transform: transformBack,
                             rotateY: '-180deg',
                         }}>
-                        <h2 className='skill-type'>Back-End</h2>
+                        <h2 className='skill-type'>Back-End & Mobile</h2>
                         <ul>
-                            <li>Node</li>
+                            <li>React Native</li>
+                            <li>Node.js</li>
                             <li>Express</li>
+                            <li>Supabase</li>
+                            <li>PostgreSQL</li>
                             <li>MongoDB</li>
-                            <li>Templating Engines (EJS, PUG)</li>
                             <li>RESTful APIs</li>
+                            <li>WebRTC</li>
+                            <li>Google ML Kit</li>
                         </ul>
                     </a.section>
 
@@ -81,13 +87,16 @@ export function Skills() {
                             transform: transformSide,
                             rotateY: '-180deg',
                         }}>
-                        <h2 className='skill-type'>Side Dishes</h2>
+                        <h2 className='skill-type'>Tools & Extras</h2>
                         <ul>
                             <li>Figma</li>
                             <li>Git/Github</li>
-                            <li>Krita</li>
-                            <li>Ai & LLM Prompting &#128540;</li>
-                            <li>Cpanel</li>
+                            <li>Expo (Managed Workflow)</li>
+                            <li>Vite</li>
+                            <li>AI & LLM Prompting</li>
+                            <li>On-device AI (ExecuTorch)</li>
+                            <li>Atomic Design Patterns</li>
+                            <li>Local-First Architecture</li>
                         </ul>
                     </a.section>
                 </div>

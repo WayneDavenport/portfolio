@@ -25,9 +25,6 @@ export function Home() {
                         <li>
                             <Link to='/contact'>Contact</Link>
                         </li>
-                        <li>
-                            <Link to='/mediaq'>MediaQ</Link>
-                        </li>
                     </ul>
                 </nav>
             </div>
