@@ -83,8 +83,7 @@ ul.nav-list {
 @media only screen and (max-width: 768px) {
 
     .nav-div {
-        overflow-y: hidden;
-        overscroll-behavior: contain;
+        overflow-y: visible;
 
     }
 

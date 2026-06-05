@@ -1,7 +1,11 @@
 :root {
   overflow-x: hidden;
+  overflow-y: auto;
   line-height: 1.5;
   box-sizing: border-box;
+}
 
-
+html, body {
+  height: auto;
+  min-height: 100vh;
 }

@@ -1,6 +1,7 @@
 import './projects.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { Badge } from '../../components/ui/Badge';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const projectsData = [
     {
@@ -34,9 +35,11 @@ const projectsData = [
 
 export function Projects() {
     const [currentProject, setCurrentProject] = useState(0);
+    const [isVideoLoading, setIsVideoLoading] = useState(true);
     const videoRef = useRef(null);
 
     useEffect(() => {
+        setIsVideoLoading(true);
         const video = videoRef.current;
         if (video) {
             video.load();
@@ -44,7 +47,61 @@ export function Projects() {
         }
     }, [currentProject]);
 
+    const handleVideoLoad = () => {
+        setIsVideoLoading(false);
+    };
+
     const project = projectsData[currentProject];
+
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.2
+            }
+        },
+        exit: { opacity: 0, transition: { duration: 0.3 } }
+    };
+
+    const badgeVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.4, ease: "easeOut" }
+        }
+    };
+
+    const titleVariants = {
+        hidden: { opacity: 0, y: -30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut" }
+        }
+    };
+
+    const descriptionVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.5, ease: "easeOut", delay: 0.2 }
+        }
+    };
+
+    const videoContainerVariants = {
+        hidden: { opacity: 0, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.5, ease: "easeOut" }
+        },
+        exit: { opacity: 0, scale: 0.95, transition: { duration: 0.3 } }
+    };
 
     return (
         <div className="projects-container">
@@ -62,47 +119,92 @@ export function Projects() {
             </nav>
 
             {/* Project Content */}
-            <div className="project-content">
-                {/* Video Section */}
-                <div className="project-video-section">
-                    <div className="project-video-container">
-                        <video
-                            ref={videoRef}
-                            loop
-                            autoPlay
-                            muted
-                            playsInline
-                            poster={project.poster}
-                            className="project-video"
+            <AnimatePresence mode="wait">
+                <motion.div 
+                    key={currentProject}
+                    className="project-content"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                >
+                    {/* Video Section */}
+                    <div className="project-video-section">
+                        <motion.div 
+                            className="project-video-container"
+                            variants={videoContainerVariants}
                         >
-                            <source src={project.video} type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    {/* Tech Stack Badges */}
-                    <div className="tech-badges">
-                        {project.tech.map((tech, index) => (
-                            <Badge
-                                key={tech}
-                                variant={index % 4 === 0 ? 'default' : index % 4 === 1 ? 'secondary' : index % 4 === 2 ? 'success' : 'warning'}
+                            {isVideoLoading && (
+                                <div className="video-loading-spinner">
+                                    <div className="spinner"></div>
+                                </div>
+                            )}
+                            <video 
+                                ref={videoRef}
+                                loop 
+                                autoPlay 
+                                muted 
+                                playsInline
+                                poster={project.poster}
+                                className="project-video"
+                                onLoadedData={handleVideoLoad}
+                                onCanPlay={handleVideoLoad}
                             >
-                                {tech}
-                            </Badge>
-                        ))}
+                                <source src={project.video} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </motion.div>
+                        {/* Tech Stack Badges */}
+                        <motion.div 
+                            className="tech-badges"
+                            variants={containerVariants}
+                        >
+                            {project.tech.map((tech, index) => (
+                                <motion.div
+                                    key={tech}
+                                    variants={badgeVariants}
+                                    custom={index}
+                                >
+                                    <Badge 
+                                        variant={index % 4 === 0 ? 'default' : index % 4 === 1 ? 'secondary' : index % 4 === 2 ? 'success' : 'warning'}
+                                    >
+                                        {tech}
+                                    </Badge>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
-                </div>
 
-                {/* Description Section */}
-                <div className="project-description-section">
-                    <h1 className="project-title">{project.title}</h1>
-                    <p className="project-description">{project.description}</p>
-                    {project.link && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                            Visit Site →
-                        </a>
-                    )}
-                </div>
-            </div>
+                    {/* Description Section */}
+                    <div className="project-description-section">
+                        <motion.h1 
+                            className="project-title"
+                            variants={titleVariants}
+                        >
+                            {project.title}
+                        </motion.h1>
+                        <motion.p 
+                            className="project-description"
+                            variants={descriptionVariants}
+                        >
+                            {project.description}
+                        </motion.p>
+                        {project.link && (
+                            <motion.a 
+                                href={project.link} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="project-link"
+                                variants={descriptionVariants}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                Visit Site →
+                            </motion.a>
+                        )}
+                    </div>
+                </motion.div>
+            </AnimatePresence>
         </div>
     );
 }
