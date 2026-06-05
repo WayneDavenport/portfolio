@@ -1,8 +1,3 @@
-@font-face {
-    font-family: 'glitch';
-    src: url('/fonts/glitch.ttf') format('truetype');
-
-}
 
 
 .home-body {
@@ -21,7 +16,7 @@
 
     font-size: 8rem;
     line-height: 1.2;
-    font-family: 'glitch', sans-serif;
+    font-family: 'SpecialElite', sans-serif;
 
 }
 
