@@ -143,6 +143,54 @@
     margin: 0;
 }
 
+/* Sharbee Toggle Switch */
+.sharbee-toggle-container {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toggle-btn {
+    padding: 0.6rem 1.2rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.toggle-btn:hover {
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #a855f7 100%);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Dev Note */
+.dev-note {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid #3b82f6;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 0;
+    font-style: italic;
+}
+
 .project-link {
     display: inline-flex;
     align-items: center;
@@ -215,6 +263,22 @@
         line-height: 1.6;
     }
 
+    .sharbee-toggle-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .toggle-btn {
+        flex: 1;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .dev-note {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+
     .tech-badges {
         flex-wrap: wrap;
         gap: 0.4rem;
@@ -247,5 +311,19 @@
 
     .project-content {
         padding: 0.75rem;
+    }
+
+    .sharbee-toggle-container {
+        padding: 0.4rem;
+    }
+
+    .toggle-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .dev-note {
+        font-size: 0.85rem;
+        padding: 0.75rem 0.9rem;
     }
 }

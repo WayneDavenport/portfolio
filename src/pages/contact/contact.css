@@ -60,6 +60,36 @@
     /* Add underline on hover */
 }
 
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding: 0.9rem 2rem;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    border-radius: 10px;
+    color: #3b82f6;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.resume-download-btn:hover {
+    background: rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.resume-download-btn:active {
+    transform: translateY(0);
+}
+
 .mediaq-section {
     display: flex;
     flex-direction: column;

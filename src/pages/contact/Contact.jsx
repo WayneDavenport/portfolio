@@ -31,9 +31,16 @@ export function Contact() {
                         </a>
                     </li>
                 </ul>
+                <a
+                    href="/resume/Wayne Davenport - Web Developer Resume.pdf"
+                    download="Wayne Davenport - Web Developer Resume.pdf"
+                    className="resume-download-btn"
+                >
+                    ↓ Download Resume
+                </a>
             </div>
 
-            <div className="mediaq-section">
+            {/* <div className="mediaq-section">
                 <h2>MediaQ</h2>
                 <div className="qr-code-container">
                     <QRCode value="https://www.mediaq.io" size={256} />
@@ -41,7 +48,7 @@ export function Contact() {
                 <a href="https://www.mediaq.io" className="mediaq-link">
                     www.mediaq.io
                 </a>
-            </div>
+            </div> */}
         </>
     )
 }
