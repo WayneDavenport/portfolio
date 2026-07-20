@@ -1,0 +1,182 @@
+.typo-switcher {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+/* Trigger pill button */
+.typo-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(12px);
+    white-space: nowrap;
+}
+
+.typo-trigger:hover {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.5);
+    color: #fff;
+}
+
+.typo-switcher.open .typo-trigger {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.6);
+    color: #fff;
+}
+
+.typo-trigger-label {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.typo-trigger-name {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Dropdown panel */
+.typo-panel {
+    background: rgba(15, 15, 20, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 220px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    animation: typo-drop 0.18s ease;
+}
+
+@keyframes typo-drop {
+    from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.typo-panel-heading {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0 0 0.3rem 0.4rem;
+}
+
+/* Individual theme options */
+.typo-option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.65rem 0.85rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+}
+
+.typo-option:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.typo-option.active {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.45);
+    color: #fff;
+}
+
+.typo-option-display {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.typo-option-body {
+    font-size: 0.75rem;
+    opacity: 0.55;
+    line-height: 1;
+}
+
+/* Tooltip on trigger */
+.typo-trigger[data-tooltip] {
+    position: relative;
+}
+
+.typo-trigger[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: max-content;
+    max-width: 240px;
+    padding: 0.5rem 0.85rem;
+    background: rgba(15, 15, 20, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.75);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    font-style: italic;
+    white-space: normal;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 200;
+}
+
+.typo-trigger[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide tooltip when panel is already open — it's redundant */
+.typo-switcher.open .typo-trigger[data-tooltip]::after {
+    display: none;
+}
+
+/* Mobile: shrink the trigger a touch */
+@media (max-width: 768px) {
+    .typo-switcher {
+        top: 0.75rem;
+        right: 0.85rem;
+    }
+
+    .typo-trigger {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .typo-trigger-name {
+        display: none; /* show only "Aa" on tiny screens */
+    }
+
+    .typo-panel {
+        min-width: 190px;
+    }
+}

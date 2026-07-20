@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Scene from '../../components/layout/Scene';
 import { Canvas } from '@react-three/fiber';
+import { TypographySwitcher } from '../../components/ui/TypographySwitcher';
 import './home.css'
 
 
@@ -8,6 +9,7 @@ export function Home() {
 
     return (
         <>
+            <TypographySwitcher />
             <div className='home-body'>
                 <h1><span>Wayne</span><br></br> Davenport</h1>
 

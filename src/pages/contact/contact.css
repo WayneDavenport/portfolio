@@ -16,7 +16,7 @@
     margin-top: 0;
     font-size: 6rem;
     line-height: 1.2;
-    font-family: 'SpecialElite', sans-serif;
+    font-family: var(--font-display);
 }
 
 .contact-methods {
@@ -100,7 +100,7 @@
 
 .mediaq-section h2 {
     font-size: 4rem;
-    font-family: 'SpecialElite', sans-serif;
+    font-family: var(--font-display);
     margin-bottom: 2rem;
 }
 
@@ -156,7 +156,7 @@
         margin-top: 0;
         font-size: 3.85rem;
         line-height: 1.2;
-        font-family: 'SpecialElite', sans-serif;
+        font-family: var(--font-display);
     }
 
     .contact-method {

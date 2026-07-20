@@ -1,15 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+/* All three typography themes loaded upfront so switching is instant */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Montserrat:wght@400;600;700;800;900&display=swap');
 
 @font-face {
     font-family: 'SpecialElite';
     src: url('/fonts/SpecialElite-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Glitch';
+    src: url('/fonts/glitch.ttf') format('truetype');
+}
+
+/* ── Theme 1 default: Modern Developer Tool ── */
 :root {
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
   line-height: 1.5;
   box-sizing: border-box;
+}
+
+/* ── Theme 2: Clean Geometric & Modern ── */
+:root.font-geometric {
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Theme 3: Clean & Minimalist ── */
+:root.font-minimal {
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ── Theme 4: OG SpecialElite ── */
+:root.font-glitch {
+  --font-display: 'SpecialElite', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ── Theme 5: Glitch ── */
+:root.font-glitch2 {
+  --font-display: 'Glitch', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 html, body {

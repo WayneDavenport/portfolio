@@ -16,7 +16,7 @@
 
     font-size: 8rem;
     line-height: 1.2;
-    font-family: 'SpecialElite', sans-serif;
+    font-family: var(--font-display);
 
 }
 
